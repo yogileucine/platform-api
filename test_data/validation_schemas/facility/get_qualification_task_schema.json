@@ -1,0 +1,130 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/Welcome10",
+    "definitions": {
+        "Welcome10": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "qualification_tasks": {
+                    "$ref": "#/definitions/QualificationTasks"
+                }
+            },
+            "required": [
+                "qualification_tasks"
+            ],
+            "title": "Welcome10"
+        },
+        "QualificationTasks": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "facilityTasks": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/FacilityTask"
+                    }
+                }
+            },
+            "required": [
+                "facilityTasks"
+            ],
+            "title": "QualificationTasks"
+        },
+        "FacilityTask": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "timestamp": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "task": {
+                    "type": "string"
+                },
+                "stage": {
+                    "type": "string"
+                },
+                "taskType": {
+                    "type": "string"
+                },
+                "facilityId": {
+                    "type": "string",
+                    "format": "uuid"
+                },
+                "evaluationId": {
+                    "type": "integer"
+                },
+                "apiId": {
+                    "type": "null"
+                },
+                "productionIds": {
+                    "type": "null"
+                },
+                "cleaningAgentId": {
+                    "type": "null"
+                },
+                "documentType": {
+                    "type": "string"
+                },
+                "productionId": {
+                    "type": "null"
+                },
+                "equipmentId": {
+                    "type": "null"
+                },
+                "documentId": {
+                    "type": "integer"
+                },
+                "qualificationType": {
+                    "type": "null"
+                },
+                "runId": {
+                    "type": "null"
+                },
+                "sampleCount": {
+                    "type": "null"
+                },
+                "completed": {
+                    "type": "boolean"
+                },
+                "isFacilityTask": {
+                    "type": "boolean"
+                },
+                "isRedone": {
+                    "type": "boolean"
+                },
+                "caseValidationStudyId": {
+                    "type": "null"
+                }
+            },
+            "required": [
+                "apiId",
+                "caseValidationStudyId",
+                "cleaningAgentId",
+                "completed",
+                "documentId",
+                "documentType",
+                "equipmentId",
+                "evaluationId",
+                "facilityId",
+                "id",
+                "isFacilityTask",
+                "isRedone",
+                "productionId",
+                "productionIds",
+                "qualificationType",
+                "runId",
+                "sampleCount",
+                "stage",
+                "task",
+                "taskType",
+                "timestamp"
+            ],
+            "title": "FacilityTask"
+        }
+    }
+}

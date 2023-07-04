@@ -1,0 +1,61 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/Welcome8",
+    "definitions": {
+        "Welcome8": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "result": {
+                    "$ref": "#/definitions/Result"
+                }
+            },
+            "required": [
+                "result"
+            ],
+            "title": "Welcome8"
+        },
+        "Result": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "swab": {
+                    "$ref": "#/definitions/Rinse"
+                },
+                "rinse": {
+                    "$ref": "#/definitions/Rinse"
+                }
+            },
+            "required": [
+                "rinse",
+                "swab"
+            ],
+            "title": "Result"
+        },
+        "Rinse": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "rule": {
+                    "type": "string"
+                },
+                "enabled": {
+                    "type": "boolean"
+                },
+                "value": {
+                    "type": "integer"
+                },
+                "additionalInfo": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "additionalInfo",
+                "enabled",
+                "rule",
+                "value"
+            ],
+            "title": "Rinse"
+        }
+    }
+}

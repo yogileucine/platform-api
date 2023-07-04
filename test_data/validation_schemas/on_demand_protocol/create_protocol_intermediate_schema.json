@@ -1,0 +1,1956 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/Welcome6",
+  "definitions": {
+    "Welcome6": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "result": {
+          "$ref": "#/definitions/Result"
+        }
+      },
+      "required": [
+        "result"
+      ],
+      "title": "Welcome6"
+    },
+    "Result": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "externalId": {
+          "type": "string"
+        },
+        "productionId": {
+          "type": "integer"
+        },
+        "productionName": {
+          "type": "string"
+        },
+        "productionExternalId": {
+          "type": "string"
+        },
+        "productionType": {
+          "$ref": "#/definitions/Type"
+        },
+        "authorId": {
+          "type": "integer"
+        },
+        "equipmentEntities": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/EquipmentEntity"
+          }
+        },
+        "showEquipmentWorst": {
+          "type": "boolean"
+        },
+        "description": {
+          "type": "null"
+        },
+        "type": {
+          "type": "string"
+        },
+        "facilityId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "evaluationId": {
+          "type": "integer"
+        },
+        "documentId": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "inspectionStages": {
+          "$ref": "#/definitions/InspectionStages"
+        },
+        "readOnlyData": {
+          "$ref": "#/definitions/ReadOnlyData"
+        },
+        "numberOfRuns": {
+          "type": "integer"
+        },
+        "decideRunsDuringExecution": {
+          "type": "boolean"
+        },
+        "onDemandVerificationId": {
+          "type": "integer"
+        },
+        "createdOn": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "samplingMethodology": {
+          "type": "null"
+        },
+        "reasonToDecideRunsDuringExecution": {
+          "type": "null"
+        },
+        "versionId": {
+          "type": "integer"
+        },
+        "deprecatedOn": {
+          "type": "null"
+        },
+        "id": {
+          "type": "integer"
+        },
+        "artefacts": {
+          "type": "array",
+          "items": {}
+        },
+        "responsibilities": {
+          "type": "array",
+          "items": {}
+        },
+        "peopleInvolved": {
+          "type": "array",
+          "items": {}
+        }
+      },
+      "required": [
+        "artefacts",
+        "authorId",
+        "createdOn",
+        "decideRunsDuringExecution",
+        "deprecatedOn",
+        "description",
+        "documentId",
+        "enabled",
+        "equipmentEntities",
+        "evaluationId",
+        "externalId",
+        "facilityId",
+        "id",
+        "inspectionStages",
+        "name",
+        "numberOfRuns",
+        "onDemandVerificationId",
+        "peopleInvolved",
+        "productionExternalId",
+        "productionId",
+        "productionName",
+        "productionType",
+        "readOnlyData",
+        "reasonToDecideRunsDuringExecution",
+        "responsibilities",
+        "samplingMethodology",
+        "showEquipmentWorst",
+        "state",
+        "type",
+        "versionId"
+      ],
+      "title": "Result"
+    },
+    "EquipmentEntity": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "externalId": {
+          "type": "string"
+        },
+        "surfaceArea": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "isWorst": {
+          "type": "boolean"
+        },
+        "groupInfo": {
+          "$ref": "#/definitions/GroupInfo"
+        },
+        "roomGradeId": {
+          "type": "null"
+        },
+        "cpId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "cpIdExternal": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "cpId",
+        "cpIdExternal",
+        "enabled",
+        "externalId",
+        "id",
+        "isWorst",
+        "name",
+        "roomGradeId",
+        "surfaceArea"
+      ],
+      "title": "EquipmentEntity"
+    },
+    "GroupInfo": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "number"
+        },
+        "externalId": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "externalId",
+        "id",
+        "name"
+      ],
+      "title": "GroupInfo"
+    },
+    "InspectionStages": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "details": {
+          "$ref": "#/definitions/Details"
+        },
+        "verification": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "boolean"
+          }
+        }
+      },
+      "required": [
+        "details",
+        "verification"
+      ],
+      "title": "InspectionStages"
+    },
+    "Details": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "batchDetails": {
+          "type": "boolean"
+        },
+        "cleaningDetails": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "batchDetails",
+        "cleaningDetails"
+      ],
+      "title": "Details"
+    },
+    "ReadOnlyData": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "am": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Am"
+          }
+        },
+        "analyticalMethods": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Am"
+          }
+        },
+        "microbialCleaningLimitPolicy": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MicrobialCleaningLimitPolicy"
+          }
+        },
+        "additionalCleaningCriterias": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AdditionalCleaningCriteria"
+          }
+        },
+        "defaultUnits": {
+          "$ref": "#/definitions/DefaultUnits"
+        },
+        "roomGrades": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RoomGrade"
+          }
+        },
+        "production": {
+          "$ref": "#/definitions/Production"
+        },
+        "cleaningProcedures": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CleaningProcedure"
+          }
+        },
+        "cleaningAgents": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CleaningAgent"
+          }
+        },
+        "chemicalPolicy": {
+          "$ref": "#/definitions/Policy"
+        },
+        "cleaningAgentPolicy": {
+          "$ref": "#/definitions/Policy"
+        },
+        "intermediatePolicy": {
+          "$ref": "#/definitions/IntermediatePolicy"
+        },
+        "equipmentDetails": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Equipment"
+          }
+        },
+        "productionWiseLodLoq": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/definitions/ProductionWiseLodLoq"
+            }
+          }
+        },
+        "productionIntermediateWiseLodLoq": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/definitions/ProductionIntermediateWiseLodLoq"
+            }
+          }
+        },
+        "cleaningAgentWiseAnalyticalMethodDetails": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/CleaningAgentWiseAnalyticalMethodDetail"
+          }
+        },
+        "variables": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Variable"
+          }
+        }
+      },
+      "required": [
+        "additionalCleaningCriterias",
+        "am",
+        "analyticalMethods",
+        "chemicalPolicy",
+        "cleaningAgentPolicy",
+        "cleaningAgentWiseAnalyticalMethodDetails",
+        "cleaningAgents",
+        "cleaningProcedures",
+        "defaultUnits",
+        "equipmentDetails",
+        "intermediatePolicy",
+        "microbialCleaningLimitPolicy",
+        "production",
+        "productionIntermediateWiseLodLoq",
+        "productionWiseLodLoq",
+        "roomGrades",
+        "variables"
+      ],
+      "title": "ReadOnlyData"
+    },
+    "AdditionalCleaningCriteria": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "facilityId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "isActive": {
+          "type": "boolean"
+        },
+        "usedForValidation": {
+          "type": "boolean"
+        },
+        "usedForPeriodicVerification": {
+          "type": "boolean"
+        },
+        "userForNewProductVerification": {
+          "type": "boolean"
+        },
+        "swabAcceptanceCriterion": {
+          "oneOf" : [
+            {"type" : "null"},
+            {"$ref":"#/definitions/AcceptanceCriterion"}
+          ]
+        },
+        "rinseAcceptanceCriterion": {
+          "oneOf" : [
+            {"type" : "null"},
+            {"$ref":"#/definitions/AcceptanceCriterion"}
+          ]
+        }
+      },
+      "required": [
+        "description",
+        "facilityId",
+        "id",
+        "isActive",
+        "name",
+        "rinseAcceptanceCriterion",
+        "swabAcceptanceCriterion",
+        "usedForPeriodicVerification",
+        "usedForValidation",
+        "userForNewProductVerification"
+      ],
+      "title": "AdditionalCleaningCriteria"
+    },
+    "Am": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "methodId": {
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/definitions/Type"
+        },
+        "isSwabSetup": {
+          "type": "boolean"
+        },
+        "isRinseSetup": {
+          "type": "boolean"
+        },
+        "solventName": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "solventQuantityMl": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "recoveryPercentage": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "instrumentUsed": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/InstrumentUsed"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "LOD": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "LOQ": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "rinseSolventName": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/RinseSolventName"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "rinseRecoveryPercentage": {
+          "type": "integer"
+        },
+        "rinseInstrumentUsed": {
+          "$ref": "#/definitions/InstrumentUsed"
+        },
+        "rinseLOD": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "rinseLOQ": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "facilityId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "useRecoveryForSwab": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "useRecoveryForRinse": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "rinseSolventQuantityMl": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "mocWiseRecovery": {
+          "type": "array",
+          "items": {}
+        },
+        "target": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "LOD",
+        "LOQ",
+        "enabled",
+        "facilityId",
+        "id",
+        "instrumentUsed",
+        "isRinseSetup",
+        "isSwabSetup",
+        "methodId",
+        "recoveryPercentage",
+        "rinseInstrumentUsed",
+        "rinseLOD",
+        "rinseLOQ",
+        "rinseRecoveryPercentage",
+        "rinseSolventName",
+        "rinseSolventQuantityMl",
+        "solventName",
+        "solventQuantityMl",
+        "type",
+        "useRecoveryForRinse",
+        "useRecoveryForSwab"
+      ],
+      "title": "Am"
+    },
+    "Policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "facilityId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "useDosage": {
+          "type": "boolean"
+        },
+        "useToxicity": {
+          "type": "boolean"
+        },
+        "useProductLimit": {
+          "type": "boolean"
+        },
+        "useARL": {
+          "type": "boolean"
+        },
+        "arl": {
+          "$ref": "#/definitions/Arl"
+        },
+        "intermediateArl": {
+          "$ref": "#/definitions/Arl"
+        },
+        "useFirstAvailableCriteria": {
+          "type": "boolean"
+        },
+        "useResidueLimit": {
+          "type": "boolean"
+        },
+        "residueLimit": {
+          "$ref": "#/definitions/Arl"
+        },
+        "useSampleLimit": {
+          "type": "boolean"
+        },
+        "swabSampleLimit": {
+          "type": "integer"
+        },
+        "rinseSampleLimit": {
+          "type": "integer"
+        },
+        "ignoreCombo": {
+          "type": "boolean"
+        },
+        "useGlobalRecoveryPercentage": {
+          "type": "boolean"
+        },
+        "globalRecoveryPercentage": {
+          "type": "integer"
+        },
+        "residueType": {
+          "type": "string"
+        },
+        "limitRepresentation": {
+          "$ref": "#/definitions/LimitRepresentation"
+        }
+      },
+      "required": [
+        "arl",
+        "facilityId",
+        "globalRecoveryPercentage",
+        "ignoreCombo",
+        "intermediateArl",
+        "limitRepresentation",
+        "residueLimit",
+        "residueType",
+        "rinseSampleLimit",
+        "swabSampleLimit",
+        "useARL",
+        "useDosage",
+        "useFirstAvailableCriteria",
+        "useGlobalRecoveryPercentage",
+        "useProductLimit",
+        "useResidueLimit",
+        "useSampleLimit",
+        "useToxicity"
+      ],
+      "title": "Policy"
+    },
+    "Arl": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": "integer"
+        },
+        "unit": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "unit",
+        "value"
+      ],
+      "title": "Arl"
+    },
+    "LimitRepresentation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "productAndEquipmentLimits": {
+          "$ref": "#/definitions/ProductAndEquipmentLimits"
+        },
+        "sampleLimits": {
+          "$ref": "#/definitions/SampleLimits"
+        },
+        "sampleRecordingLimits": {
+          "$ref": "#/definitions/SampleLimits"
+        },
+        "reporting": {
+          "$ref": "#/definitions/Reporting"
+        }
+      },
+      "required": [
+        "productAndEquipmentLimits",
+        "reporting",
+        "sampleLimits",
+        "sampleRecordingLimits"
+      ],
+      "title": "LimitRepresentation"
+    },
+    "ProductAndEquipmentLimits": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "salMassUnit": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "salMassUnit"
+      ],
+      "title": "ProductAndEquipmentLimits"
+    },
+    "Reporting": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "swab": {
+          "$ref": "#/definitions/ReportingRinse"
+        },
+        "rinse": {
+          "$ref": "#/definitions/ReportingRinse"
+        }
+      },
+      "required": [
+        "rinse",
+        "swab"
+      ],
+      "title": "Reporting"
+    },
+    "ReportingRinse": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "showSar": {
+          "type": "boolean"
+        },
+        "showPerSampleResidue": {
+          "type": "boolean"
+        },
+        "showConcentration": {
+          "type": "boolean"
+        },
+        "perSampleLimitUnit": {
+          "type": "string"
+        },
+        "concentrationLimitUnit": {
+          "$ref": "#/definitions/Unit"
+        }
+      },
+      "required": [
+        "concentrationLimitUnit",
+        "perSampleLimitUnit",
+        "showConcentration",
+        "showPerSampleResidue",
+        "showSar"
+      ],
+      "title": "ReportingRinse"
+    },
+    "SampleLimitsRinse": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "usePerSampleLimit": {
+          "type": "boolean"
+        },
+        "unit": {
+          "$ref": "#/definitions/Unit"
+        }
+      },
+      "required": [
+        "unit",
+        "usePerSampleLimit"
+      ],
+      "title": "SampleLimitsRinse"
+    },
+    "CleaningAgentWiseAnalyticalMethodDetail": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "analyticalMethodId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "lod": {
+          "$ref": "#/definitions/Lod"
+        },
+        "loq": {
+          "$ref": "#/definitions/Lod"
+        },
+        "recoveryPercentage": {
+          "$ref": "#/definitions/RecoveryPercentage"
+        },
+        "solventVolumeMl": {
+          "$ref": "#/definitions/SolventVolumeMlUnion"
+        }
+      },
+      "required": [
+        "analyticalMethodId",
+        "lod",
+        "loq",
+        "recoveryPercentage",
+        "solventVolumeMl"
+      ],
+      "title": "CleaningAgentWiseAnalyticalMethodDetail"
+    },
+    "Lod": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "swab": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "rinse": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "rinse",
+        "swab"
+      ],
+      "title": "Lod"
+    },
+    "RecoveryPercentage": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "default": {
+          "$ref": "#/definitions/Lod"
+        },
+        "samplingMethod": {
+          "$ref": "#/definitions/SamplingMethod"
+        }
+      },
+      "required": [
+        "default",
+        "samplingMethod"
+      ],
+      "title": "RecoveryPercentage"
+    },
+    "SamplingMethod": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "swab": {
+          "$ref": "#/definitions/SamplingMethodRinse"
+        },
+        "rinse": {
+          "$ref": "#/definitions/SamplingMethodRinse"
+        }
+      },
+      "required": [
+        "rinse",
+        "swab"
+      ],
+      "title": "SamplingMethod"
+    },
+    "SamplingMethodRinse": {
+      "type": "object",
+      "additionalProperties": false,
+      "title": "SamplingMethodRinse"
+    },
+    "SampleLimits": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "swab": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/SampleLimitsRinse"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "rinse": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/SampleLimitsRinse"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "rinse",
+        "swab"
+      ],
+      "title": "SampleLimits"
+    },
+    "CleaningAgent": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "externalId": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "gras": {
+          "type": "boolean"
+        },
+        "ld50MgPerKg": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "configuredLD50": {
+          "type": "boolean"
+        },
+        "pdeMg": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "analyticalMethodId": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string",
+              "format": "uuid"
+            }
+          ]
+        },
+        "isWater": {
+          "type": "boolean"
+        },
+        "facilityId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "analyticalMethod": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Am"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "analyticalMethodId",
+        "configuredLD50",
+        "enabled",
+        "externalId",
+        "facilityId",
+        "gras",
+        "id",
+        "isWater",
+        "ld50MgPerKg",
+        "name",
+        "pdeMg"
+      ],
+      "title": "CleaningAgent"
+    },
+    "CleaningProcedure": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "equipments": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Equipment"
+          }
+        },
+        "facilityId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "cleaningAgents": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CleaningAgent"
+          }
+        },
+        "id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "enabled": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "cleaningAgents",
+        "enabled",
+        "facilityId",
+        "id",
+        "name"
+      ],
+      "title": "CleaningProcedure"
+    },
+    "Equipment": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "externalId": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "surface_area_sqcm": {
+          "type": "integer"
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "equipmentGroupId": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "facilityId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "cleaningProcedureId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "make": {
+          "type": "null"
+        },
+        "model": {
+          "type": "null"
+        },
+        "capacity": {
+          "type": "null"
+        },
+        "roomGradeId": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "number"
+            }
+          ]
+        },
+        "rank": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "locationAssessment": {
+          "type": "boolean"
+        },
+        "samplingLocations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SamplingLocation"
+          }
+        },
+        "cleaningProcedure": {
+          "$ref": "#/definitions/CleaningProcedure"
+        }
+      },
+      "required": [
+        "capacity",
+        "cleaningProcedureId",
+        "enabled",
+        "equipmentGroupId",
+        "externalId",
+        "facilityId",
+        "id",
+        "locationAssessment",
+        "make",
+        "model",
+        "name",
+        "rank",
+        "roomGradeId",
+        "surface_area_sqcm"
+      ],
+      "title": "Equipment"
+    },
+    "SamplingLocation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "systemQualifiedStatus": {
+          "type": "string"
+        },
+        "manualQualifiedStatus": {
+          "type": "string"
+        },
+        "reason": {
+          "type": "null"
+        },
+        "facilityId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "equipmentId": {
+          "type": "integer"
+        },
+        "contactType": {
+          "type": "string"
+        },
+        "samplingMethod": {
+          "type": "string"
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "samples": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Sample"
+          }
+        }
+      },
+      "required": [
+        "contactType",
+        "enabled",
+        "equipmentId",
+        "facilityId",
+        "id",
+        "manualQualifiedStatus",
+        "name",
+        "reason",
+        "samples",
+        "samplingMethod",
+        "systemQualifiedStatus"
+      ],
+      "title": "SamplingLocation"
+    },
+    "Sample": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "samplingLocationId": {
+          "type": "integer"
+        },
+        "sampleId": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "additionalCleaningCriterionId": {
+          "type": "null"
+        },
+        "surfaceAreaSqcm": {
+          "type": "integer"
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "facilityId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "rinseVolumeMl": {
+          "oneOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "mocId": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "productionWiseSamplingParameters": {
+          "type": "array",
+          "items": {}
+        }
+      },
+      "required": [
+        "additionalCleaningCriterionId",
+        "enabled",
+        "facilityId",
+        "id",
+        "mocId",
+        "productionWiseSamplingParameters",
+        "rinseVolumeMl",
+        "sampleId",
+        "samplingLocationId",
+        "surfaceAreaSqcm",
+        "type"
+      ],
+      "title": "Sample"
+    },
+    "DefaultUnits": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "tablet_weight": {
+          "type": "string"
+        },
+        "volume": {
+          "type": "string"
+        },
+        "strength": {
+          "type": "string"
+        },
+        "ld50": {
+          "type": "string"
+        },
+        "surface_area": {
+          "type": "string"
+        },
+        "min_bs": {
+          "type": "string"
+        },
+        "ldd": {
+          "type": "string"
+        },
+        "td": {
+          "type": "string"
+        },
+        "pde": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "ld50",
+        "ldd",
+        "min_bs",
+        "pde",
+        "strength",
+        "surface_area",
+        "tablet_weight",
+        "td",
+        "volume"
+      ],
+      "title": "DefaultUnits"
+    },
+    "IntermediatePolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "arl": {
+          "type": "integer"
+        },
+        "activesArl": {
+          "type": "integer"
+        },
+        "facilityId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "ignoreCombo": {
+          "type": "boolean"
+        },
+        "globalRecoveryPercentage": {
+          "type": "integer"
+        },
+        "useGlobalRecoveryPercentage": {
+          "type": "boolean"
+        },
+        "useResidueLimit": {
+          "type": "boolean"
+        },
+        "residueLimit": {
+          "type": "number"
+        },
+        "useSampleLimit": {
+          "type": "boolean"
+        },
+        "swabSampleLimit": {
+          "type": "integer"
+        },
+        "rinseSampleLimit": {
+          "type": "integer"
+        },
+        "limitRepresentation": {
+          "$ref": "#/definitions/LimitRepresentation"
+        }
+      },
+      "required": [
+        "activesArl",
+        "arl",
+        "facilityId",
+        "globalRecoveryPercentage",
+        "id",
+        "ignoreCombo",
+        "limitRepresentation",
+        "residueLimit",
+        "rinseSampleLimit",
+        "swabSampleLimit",
+        "useGlobalRecoveryPercentage",
+        "useResidueLimit",
+        "useSampleLimit"
+      ],
+      "title": "IntermediatePolicy"
+    },
+    "MicrobialCleaningLimitPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "type": {
+          "type": "string"
+        },
+        "samplingMethodType": {
+          "type": "string"
+        },
+        "residueType": {
+          "$ref": "#/definitions/Type"
+        },
+        "contactType": {
+          "type": "string"
+        },
+        "limit": {
+          "type": "integer"
+        },
+        "unit": {
+          "type": "string"
+        },
+        "facilityId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "roomGradeId": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "number"
+            }
+          ]
+        }
+      },
+      "required": [
+        "contactType",
+        "facilityId",
+        "id",
+        "limit",
+        "residueType",
+        "roomGradeId",
+        "samplingMethodType",
+        "type",
+        "unit"
+      ],
+      "title": "MicrobialCleaningLimitPolicy"
+    },
+    "Production": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "production_id": {
+          "type": "string"
+        },
+        "productId": {
+          "type": "null"
+        },
+        "min_bsValue": {
+          "type": "integer"
+        },
+        "min_bsUnit": {
+          "type": "string"
+        },
+        "intermediateId": {
+          "type": "integer"
+        },
+        "productionType": {
+          "$ref": "#/definitions/Type"
+        },
+        "facilityId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "status": {
+          "type": "string"
+        },
+        "intermediateAmId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "intermediateAm": {
+          "$ref": "#/definitions/Am"
+        },
+        "productionApiAMMappings": {
+          "type": "array",
+          "items": {}
+        },
+        "equipmentMappings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/EquipmentMapping"
+          }
+        },
+        "additionalFieldValues": {
+          "type": "array",
+          "items": {}
+        },
+        "intermediate": {
+          "$ref": "#/definitions/Intermediate"
+        }
+      },
+      "required": [
+        "additionalFieldValues",
+        "enabled",
+        "equipmentMappings",
+        "facilityId",
+        "id",
+        "intermediate",
+        "intermediateAm",
+        "intermediateAmId",
+        "intermediateId",
+        "min_bsUnit",
+        "min_bsValue",
+        "productId",
+        "productionApiAMMappings",
+        "productionType",
+        "production_id",
+        "status"
+      ],
+      "title": "Production"
+    },
+    "EquipmentMapping": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "productionId": {
+          "type": "integer"
+        },
+        "type": {
+          "type": "string"
+        },
+        "equipmentId": {
+          "oneOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "provisioningGroupId": {
+          "oneOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "facilityId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "equipment": {
+          "oneOf": [
+            {
+              "$ref": "#/definitions/Equipment"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "provisioningGroup": {
+          "oneOf": [
+            {
+              "$ref": "#/definitions/ProvisioningGroup"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "equipment",
+        "equipmentId",
+        "facilityId",
+        "id",
+        "productionId",
+        "provisioningGroup",
+        "provisioningGroupId",
+        "type"
+      ],
+      "title": "EquipmentMapping"
+    },
+    "ProvisioningGroup": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "equipmentGroupId": {
+          "type": "integer"
+        },
+        "noOfEquipmentsBeingUsed": {
+          "type": "integer"
+        },
+        "facilityId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "equipmentGroup": {
+          "$ref": "#/definitions/EquipmentGroup"
+        },
+        "equipments": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Equipment"
+          }
+        }
+      },
+      "required": [
+        "equipmentGroup",
+        "equipmentGroupId",
+        "equipments",
+        "facilityId",
+        "id",
+        "noOfEquipmentsBeingUsed"
+      ],
+      "title": "ProvisioningGroup"
+    },
+    "EquipmentGroup": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "externalId": {
+          "type": "string"
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "facilityId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "filePath": {
+          "type": "null"
+        },
+        "externalFilename": {
+          "type": "null"
+        },
+        "id": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "enabled",
+        "externalFilename",
+        "externalId",
+        "facilityId",
+        "filePath",
+        "id",
+        "name"
+      ],
+      "title": "EquipmentGroup"
+    },
+    "Intermediate": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "externalId": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "facilityId": {
+          "type": "string",
+          "format": "uuid"
+        }
+      },
+      "required": [
+        "enabled",
+        "externalId",
+        "facilityId",
+        "id",
+        "name"
+      ],
+      "title": "Intermediate"
+    },
+    "ProductionIntermediateWiseLodLoq": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "analyticalMethodId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "lod": {
+          "$ref": "#/definitions/Lod"
+        },
+        "loq": {
+          "$ref": "#/definitions/Lod"
+        },
+        "recoveryPercentage": {
+          "$ref": "#/definitions/RecoveryPercentage"
+        },
+        "solventVolumeMl": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/SolventVolumeMlClass"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "analyticalMethodId",
+        "lod",
+        "loq",
+        "recoveryPercentage",
+        "solventVolumeMl"
+      ],
+      "title": "ProductionIntermediateWiseLodLoq"
+    },
+    "SolventVolumeMlClass": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "swab": {
+          "$ref": "#/definitions/RinseUnion"
+        },
+        "rinse": {
+          "$ref": "#/definitions/RinseUnion"
+        }
+      },
+      "required": [
+        "rinse",
+        "swab"
+      ],
+      "title": "SolventVolumeMlClass"
+    },
+    "ProductionWiseLodLoq": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "analyticalMethodId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "lod": {
+          "$ref": "#/definitions/Lod"
+        },
+        "loq": {
+          "$ref": "#/definitions/Lod"
+        },
+        "recoveryPercentage": {
+          "$ref": "#/definitions/RecoveryPercentage"
+        },
+        "solventVolumeMl": {
+          "$ref": "#/definitions/Lod"
+        }
+      },
+      "required": [
+        "analyticalMethodId",
+        "lod",
+        "loq",
+        "recoveryPercentage",
+        "solventVolumeMl"
+      ],
+      "title": "ProductionWiseLodLoq"
+    },
+    "RoomGrade": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "facilityId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "equipments": {
+          "type": "array",
+          "items": {}
+        }
+      },
+      "required": [
+        "equipments",
+        "facilityId",
+        "id",
+        "name"
+      ],
+      "title": "RoomGrade"
+    },
+    "Variable": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "shortName": {
+          "type": "string"
+        },
+        "unit": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "defaultValue": {
+          "type": "integer"
+        },
+        "defaultValueReason": {
+          "type": "string"
+        },
+        "facilityId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "id": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "defaultValue",
+        "defaultValueReason",
+        "description",
+        "facilityId",
+        "id",
+        "name",
+        "shortName",
+        "unit"
+      ],
+      "title": "Variable"
+    },
+    "SolventVolumeMlUnion": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/SampleLimits"
+        },
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "SolventVolumeMlUnion"
+    },
+    "RinseUnion": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/SampleLimitsRinse"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "RinseUnion"
+    },
+    "Type": {
+      "type": "string",
+      "enum": [
+        "Endotoxin",
+        "intermediate",
+        "product",
+        "BioBurden",
+        "cleaningAgent"
+      ],
+      "title": "Type"
+    },
+    "InstrumentUsed": {
+      "type": "string",
+      "title": "InstrumentUsed"
+    },
+    "RinseSolventName": {
+      "type": "string",
+      "enum": [
+        "Water",
+        "Solvent1"
+      ],
+      "title": "RinseSolventName"
+    },
+    "Unit": {
+      "type": "string",
+      "enum": [
+        "ppm",
+        "ug"
+      ],
+      "title": "Unit"
+    },
+    "AcceptanceCriterion": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "value": {
+          "$ref": "#/definitions/Arl"
+        },
+        "lowerBound": {
+          "$ref": "#/definitions/Arl"
+        },
+        "upperBound": {
+          "$ref": "#/definitions/Arl"
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "title": "AcceptanceCriterion"
+    }
+  }
+}

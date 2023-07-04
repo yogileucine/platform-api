@@ -1,0 +1,75 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/Welcome7",
+    "definitions": {
+        "Welcome7": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "result": {
+                    "$ref": "#/definitions/Result"
+                }
+            },
+            "required": [
+                "result"
+            ],
+            "title": "Welcome7"
+        },
+        "Result": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "batchDetails": {
+                    "type": "boolean"
+                },
+                "cleaningDetails": {
+                    "type": "boolean"
+                },
+                "visual": {
+                    "type": "boolean"
+                },
+                "actives": {
+                    "type": "boolean"
+                },
+                "cleaningAgent": {
+                    "type": "boolean"
+                },
+                "bioburden": {
+                    "type": "boolean"
+                },
+                "microbial": {
+                    "type": "boolean"
+                },
+                "endotoxin": {
+                    "type": "boolean"
+                },
+                "TOC": {
+                    "type": "boolean"
+                },
+                "pH": {
+                    "type": "boolean"
+                },
+                "atomicAdsorption": {
+                    "type": "boolean"
+                },
+                "conductivity": {
+                    "type": "boolean"
+                },
+                "rinseClarity": {
+                    "type": "boolean"
+                },
+                "odour": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "actives",
+                "batchDetails",
+                "cleaningAgent",
+                "cleaningDetails",
+                "visual"
+            ],
+            "title": "Result"
+        }
+    }
+}

@@ -1,0 +1,1 @@
+{"error":{"errName":"GeneralTaskError","where":{"domain":"OnDemandProtocol","action":"Modify"},"name":"Equipment","message":"At least one Equipment should be selected for the Protocol","action":"Modify","domain":"OnDemandProtocol"}}

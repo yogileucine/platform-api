@@ -1,0 +1,69 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/Welcome1",
+    "definitions": {
+        "Welcome1": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "error": {
+                    "$ref": "#/definitions/Error"
+                }
+            },
+            "required": [
+                "error"
+            ],
+            "title": "Welcome1"
+        },
+        "Error": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "errName": {
+                    "type": "string"
+                },
+                "where": {
+                    "$ref": "#/definitions/Where"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "message": {
+                    "type": "string"
+                },
+                "action": {
+                    "type": "string"
+                },
+                "domain": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "action",
+                "domain",
+                "errName",
+                "message",
+                "name",
+                "where"
+            ],
+            "title": "Error"
+        },
+        "Where": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "domain": {
+                    "type": "string"
+                },
+                "action": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "action",
+                "domain"
+            ],
+            "title": "Where"
+        }
+    }
+}

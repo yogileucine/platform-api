@@ -1,0 +1,74 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/Welcome10",
+    "definitions": {
+        "Welcome10": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "selection_criteria": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/SelectionCriterion"
+                    }
+                }
+            },
+            "required": [
+                "selection_criteria"
+            ],
+            "title": "Welcome10"
+        },
+        "SelectionCriterion": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "criteriaId": {
+                    "type": "string",
+                    "format": "uuid"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "descriptions": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "rules": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Rule"
+                    }
+                }
+            },
+            "required": [
+                "criteriaId",
+                "descriptions",
+                "name",
+                "rules"
+            ],
+            "title": "SelectionCriterion"
+        },
+        "Rule": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+                "type": {
+                    "type": "string"
+                },
+                "step": {
+                    "type": "integer"
+                },
+                "property": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "step",
+                "type"
+            ],
+            "title": "Rule"
+        }
+    }
+}

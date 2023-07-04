@@ -1,0 +1,69 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/Welcome6",
+    "definitions": {
+        "Welcome6": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+                "error": {
+                    "$ref": "#/definitions/Error"
+                }
+            },
+            "required": [
+                "error"
+            ],
+            "title": "Welcome6"
+        },
+        "Error": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+                "errName": {
+                    "type": "string"
+                },
+                "where": {
+                    "$ref": "#/definitions/Where"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "message": {
+                    "type": "string"
+                },
+                "action": {
+                    "type": "string"
+                },
+                "domain": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "action",
+                "domain",
+                "errName",
+                "message",
+                "name",
+                "where"
+            ],
+            "title": "Error"
+        },
+        "Where": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+                "domain": {
+                    "type": "string"
+                },
+                "action": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "action",
+                "domain"
+            ],
+            "title": "Where"
+        }
+    }
+}

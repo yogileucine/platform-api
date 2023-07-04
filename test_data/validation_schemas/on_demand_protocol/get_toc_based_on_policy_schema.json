@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "result": {
+      "type": "object",
+      "properties": {
+        "swab": {
+          "type": "object",
+          "properties": {
+            "rule": {
+              "type": "string"
+            },
+            "enabled": {
+              "type": "boolean"
+            },
+            "value": {
+              "type": "integer"
+            },
+            "additionalInfo": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "rule",
+            "enabled",
+            "value",
+            "additionalInfo"
+          ]
+        },
+        "rinse": {
+          "type": "object",
+          "properties": {
+            "rule": {
+              "type": "string"
+            },
+            "enabled": {
+              "type": "boolean"
+            },
+            "value": {
+              "type": "integer"
+            },
+            "additionalInfo": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "rule",
+            "enabled",
+            "value",
+            "additionalInfo"
+          ]
+        }
+      },
+      "required": [
+        "swab",
+        "rinse"
+      ]
+    }
+  },
+  "required": [
+    "result"
+  ]
+}
