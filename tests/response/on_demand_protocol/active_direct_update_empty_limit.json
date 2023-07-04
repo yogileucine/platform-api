@@ -1,0 +1,1 @@
+{"error":{"errName":"AcceptanceCriteriaForAllSelectedEquipment","where":{"domain":"OnDemandProtocol","action":"Modify"},"name":"Protocol","message":"Acceptance Criteria needs to be defined for all selected Equipment","action":"Modify","domain":"OnDemandProtocol"}}

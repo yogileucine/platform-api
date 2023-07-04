@@ -1,0 +1,1 @@
+{"error":{"errName":"GeneralTaskError","where":{"domain":"OnDemandProtocol","action":"Modify"},"name":"Equipment","message":"All Equipment should have a Cleaning Procedure ID associated with them","action":"Modify","domain":"OnDemandProtocol"}}

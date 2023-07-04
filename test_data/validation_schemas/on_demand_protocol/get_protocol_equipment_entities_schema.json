@@ -1,0 +1,117 @@
+{
+    "$ref": "#/definitions/Welcome7",
+    "definitions": {
+        "Welcome7": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "result": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Result"
+                    }
+                }
+            },
+            "required": [
+                "result"
+            ],
+            "title": "Welcome7"
+        },
+        "Result": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "type": "string"
+                },
+                "equipment": {
+                    "$ref": "#/definitions/Equipment"
+                },
+                "equipmentGroup": {
+                    "$ref": "#/definitions/EquipmentGroup"
+                }
+            },
+            "required": [
+                "type"
+            ],
+            "title": "Result"
+        },
+        "Equipment": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "externalId": {
+                    "type": "string"
+                },
+                "cpId": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "enabled": {
+                    "type": "boolean"
+                },
+                "surfaceArea": {
+                    "type": "number"
+                },
+                "isWorst": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "cpId",
+                "enabled",
+                "externalId",
+                "id",
+                "isWorst",
+                "name",
+                "surfaceArea"
+            ],
+            "title": "Equipment"
+        },
+        "EquipmentGroup": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "externalId": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "enabled": {
+                    "type": "boolean"
+                },
+                "partiallyEnabled": {
+                    "type": "boolean"
+                },
+                "surfaceArea": {
+                    "type": "number"
+                },
+                "equipments": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Equipment"
+                    }
+                }
+            },
+            "required": [
+                "enabled",
+                "equipments",
+                "externalId",
+                "id",
+                "name",
+                "partiallyEnabled",
+                "surfaceArea"
+            ],
+            "title": "EquipmentGroup"
+        }
+    }
+}

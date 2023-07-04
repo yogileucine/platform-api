@@ -1,0 +1,202 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/Welcome3",
+    "definitions": {
+        "Welcome3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "cleaningEvaluation": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/CleaningEvaluation"
+                    }
+                }
+            },
+            "required": [
+                "cleaningEvaluation"
+            ],
+            "title": "Welcome3"
+        },
+        "CleaningEvaluation": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "startedOn": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "facilityId": {
+                    "type": "string",
+                    "format": "uuid"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "documents": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Document"
+                    }
+                },
+                "summary": {
+                    "$ref": "#/definitions/Summary"
+                },
+                "changes": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Change"
+                    }
+                },
+                "noOfChanges": {
+                    "type": "integer"
+                },
+                "validationImpact": {
+                    "$ref": "#/definitions/ValidationImpact"
+                }
+            },
+            "required": [
+                "changes",
+                "documents",
+                "facilityId",
+                "id",
+                "noOfChanges",
+                "startedOn",
+                "status",
+                "summary",
+                "validationImpact"
+            ],
+            "title": "CleaningEvaluation"
+        },
+        "Change": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "label": {
+                    "type": "string"
+                },
+                "yesOrNo": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "label",
+                "yesOrNo"
+            ],
+            "title": "Change"
+        },
+        "Document": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "label": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "label",
+                "status",
+                "type"
+            ],
+            "title": "Document"
+        },
+        "Summary": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "changes": {
+                    "$ref": "#/definitions/Changes"
+                }
+            },
+            "required": [
+                "changes"
+            ],
+            "title": "Summary"
+        },
+        "Changes": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "equipmentsAddedCount": {
+                    "type": "integer"
+                },
+                "equipmentsRemovedCount": {
+                    "type": "integer"
+                },
+                "productionsAddedCount": {
+                    "type": "integer"
+                },
+                "minBsChangedCount": {
+                    "type": "integer"
+                },
+                "productionsRemovedCount": {
+                    "type": "integer"
+                },
+                "surfaceAreaChangedCount": {
+                    "type": "integer"
+                },
+                "productPropertiesChangedCount": {
+                    "type": "integer"
+                },
+                "equipmentsCurrentCount": {
+                    "type": "integer"
+                },
+                "equipmentGroupsCurrentCount": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "equipmentGroupsCurrentCount",
+                "equipmentsAddedCount",
+                "equipmentsCurrentCount",
+                "equipmentsRemovedCount",
+                "minBsChangedCount",
+                "productPropertiesChangedCount",
+                "productionsAddedCount",
+                "productionsRemovedCount",
+                "surfaceAreaChangedCount"
+            ],
+            "title": "Changes"
+        },
+        "ValidationImpact": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "numberOfRevisions": {
+                    "type": "integer"
+                },
+                "equipmentAffectedByChanges": {
+                    "type": "integer"
+                },
+                "equipmentGroupsAffectedByChanges": {
+                    "type": "integer"
+                },
+                "numberOfValidationStudies": {
+                    "type": "integer"
+                },
+                "impactDetails": {
+                    "type": "array",
+                    "items": {}
+                }
+            },
+            "required": [
+                "equipmentAffectedByChanges",
+                "equipmentGroupsAffectedByChanges"
+            ],
+            "title": "ValidationImpact"
+        }
+    }
+}

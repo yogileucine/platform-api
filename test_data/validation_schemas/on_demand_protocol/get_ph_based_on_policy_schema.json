@@ -1,0 +1,66 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/Welcome9",
+    "definitions": {
+        "Welcome9": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "result": {
+                    "$ref": "#/definitions/Result"
+                }
+            },
+            "required": [
+                "result"
+            ],
+            "title": "Welcome9"
+        },
+        "Result": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "swab": {
+                    "$ref": "#/definitions/Rinse"
+                },
+                "rinse": {
+                    "$ref": "#/definitions/Rinse"
+                }
+            },
+            "required": [
+                "rinse",
+                "swab"
+            ],
+            "title": "Result"
+        },
+        "Rinse": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "rule": {
+                    "type": "string"
+                },
+                "enabled": {
+                    "type": "boolean"
+                },
+                "value": {
+                    "type": "integer"
+                },
+                "maxValue": {
+                    "type": "number"
+                },
+                "minValue": {
+                    "type": "number"
+                },
+                "additionalInfo": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "additionalInfo",
+                "enabled",
+                "rule"
+            ],
+            "title": "Rinse"
+        }
+    }
+}

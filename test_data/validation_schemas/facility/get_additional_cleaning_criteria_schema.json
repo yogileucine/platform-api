@@ -1,0 +1,148 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/Welcome3",
+    "definitions": {
+        "Welcome3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "result": {
+                    "$ref": "#/definitions/Result"
+                }
+            },
+            "required": [
+                "result"
+            ],
+            "title": "Welcome3"
+        },
+        "Result": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TOC": {
+                    "$ref": "#/definitions/Aa"
+                },
+                "pH": {
+                    "$ref": "#/definitions/Aa"
+                },
+                "Conductivity": {
+                    "$ref": "#/definitions/Aa"
+                },
+                "AA": {
+                    "$ref": "#/definitions/Aa"
+                },
+                "Odour": {
+                    "$ref": "#/definitions/Aa"
+                },
+                "RC": {
+                    "$ref": "#/definitions/Aa"
+                }
+            },
+            "required": [
+                "AA",
+                "Conductivity",
+                "Odour",
+                "RC",
+                "TOC",
+                "pH"
+            ],
+            "title": "Result"
+        },
+        "Aa": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "facilityId": {
+                    "type": "string",
+                    "format": "uuid"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "isActive": {
+                    "type": "boolean"
+                },
+                "usedForValidation": {
+          "type": "boolean"
+        },
+                "usedForPeriodicVerification": {
+          "type": "boolean"
+        },
+                "userForNewProductVerification": {
+          "type": "boolean"
+        },
+                "swabAcceptanceCriterion": {
+                   "oneOf": [
+                     {"type": "null"},
+                     { "$ref": "#/definitions/AcceptanceCriterion"}
+                   ]
+                },
+                "rinseAcceptanceCriterion": {
+                    "oneOf": [
+                     {"type": "null"},
+                     { "$ref": "#/definitions/AcceptanceCriterion"}
+                   ]
+                }
+            },
+            "required": [
+                "description",
+                "facilityId",
+                "id",
+                "isActive",
+                "name",
+                "rinseAcceptanceCriterion",
+                "swabAcceptanceCriterion"
+            ],
+            "title": "Aa"
+        },
+        "AcceptanceCriterion": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "type": "string"
+                },
+                "value": {
+                    "$ref": "#/definitions/Value"
+                }
+            },
+            "required": [
+                "type",
+                "value"
+            ],
+            "title": "AcceptanceCriterion"
+        },
+        "Value": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "value": {
+                    "type": "integer"
+                },
+                "unit": {
+                    "$ref": "#/definitions/Unit"
+                }
+            },
+            "required": [
+                "unit",
+                "value"
+            ],
+            "title": "Value"
+        },
+        "Unit": {
+            "type": "string",
+            "enum": [
+                "",
+                "uS/cm",
+                "ppb"
+            ],
+            "title": "Unit"
+        }
+    }
+}

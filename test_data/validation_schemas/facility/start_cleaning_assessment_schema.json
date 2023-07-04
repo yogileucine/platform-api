@@ -1,0 +1,36 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/Welcome4",
+    "definitions": {
+        "Welcome4": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "cleaningEvaluation": {
+                    "$ref": "#/definitions/CleaningEvaluation"
+                }
+            },
+            "required": [
+                "cleaningEvaluation"
+            ],
+            "title": "Welcome4"
+        },
+        "CleaningEvaluation": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CEReportId": {
+                    "type": "integer"
+                },
+                "CVReportId": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "CEReportId",
+                "CVReportId"
+            ],
+            "title": "CleaningEvaluation"
+        }
+    }
+}

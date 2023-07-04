@@ -1,0 +1,488 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/Welcome5",
+    "definitions": {
+        "Welcome5": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "result": {
+                    "$ref": "#/definitions/Result"
+                }
+            },
+            "required": [
+                "result"
+            ],
+            "title": "Welcome5"
+        },
+        "Result": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "stages": {
+                    "$ref": "#/definitions/Stages"
+                }
+            },
+            "required": [
+                "id",
+                "stages"
+            ],
+            "title": "Result"
+        },
+        "Stages": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "visual": {
+                    "$ref": "#/definitions/Visual"
+                },
+                "odour": {
+                    "$ref": "#/definitions/Odour"
+                },
+                "rinseClarity": {
+                    "$ref": "#/definitions/Odour"
+                },
+                "actives": {
+                    "$ref": "#/definitions/ActiveResidueVerification"
+                },
+                "intermediates": {
+                    "$ref": "#/definitions/CleaningAgentResidueVerification"
+                },
+                "cleaningAgent": {
+                    "$ref": "#/definitions/CleaningAgentResidueVerification"
+                },
+                "microbial": {
+                    "$ref": "#/definitions/MicrobialResidueVerification"
+                },
+                "bioburden": {
+                    "$ref": "#/definitions/BioburdenResidueVerification"
+                },
+                "endotoxin": {
+                    "$ref": "#/definitions/EndotoxinResidueVerification"
+                },
+                "TOC": {
+                    "$ref": "#/definitions/VerificationClass"
+                },
+                "atomicAdsorption": {
+                    "$ref": "#/definitions/VerificationClass"
+                },
+                "pH": {
+                    "$ref": "#/definitions/VerificationClass"
+                },
+                "conductivity": {
+                    "$ref": "#/definitions/VerificationClass"
+                }
+            },
+            "title": "Stages"
+        },
+        "Visual": {
+            "type": "object",
+            "additionalProperties": false,
+            "title": "Visual"
+        },
+        "ActiveResidueVerification": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "showWorstCaseEvaluation": {
+                    "type": "boolean"
+                },
+                "direct": {
+                    "$ref": "#/definitions/ActiveResidueVerificationDirect"
+                },
+                "indirect": {
+                    "$ref": "#/definitions/ActiveResidueVerificationDirect"
+                }
+            },
+            "required": [
+                "direct",
+                "showWorstCaseEvaluation"
+            ],
+            "title": "ActiveResidueVerification"
+        },
+        "ActiveResidueVerificationDirect": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "equipments": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/definitions/PurpleEquipment"
+                    }
+                },
+                "policy": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "equipments"
+            ],
+            "title": "ActiveResidueVerificationDirect"
+        },
+        "PurpleEquipment": {
+            "type": "object",
+            "additionalProperties": false,
+            "patternProperties": {
+            "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$": {
+                    "$ref": "#/definitions/eqactive"
+                }
+            },
+            "title": "PurpleEquipment"
+        },
+        "Rinse": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "rule": {
+                    "type": "string"
+                },
+                "enabled": {
+                    "type": "boolean"
+                },
+                "additionalInfo": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "additionalInfo",
+                "enabled"
+            ],
+            "title": "Rinse"
+        },
+        "BioburdenResidueVerification": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "direct": {
+                    "$ref": "#/definitions/BioburdenResidueVerificationDirect"
+                },
+                "indirect": {
+                    "$ref": "#/definitions/BioburdenResidueVerificationDirect"
+                }
+            },
+            "required": [
+                "direct",
+                "indirect"
+            ],
+            "title": "BioburdenResidueVerification"
+        },
+        "BioburdenResidueVerificationDirect": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "fungal": {
+                    "$ref": "#/definitions/Bacterial"
+                },
+                "bacterial": {
+                    "$ref": "#/definitions/Bacterial"
+                },
+                "bioburden": {
+                    "$ref": "#/definitions/Bacterial"
+                }
+            },
+            "title": "BioburdenResidueVerificationDirect"
+        },
+        "Bacterial": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "equipments": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/definitions/BacterialEquipment"
+                    }
+                }
+            },
+            "required": [
+                "equipments"
+            ],
+            "title": "Bacterial"
+        },
+        "BacterialEquipment": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "enabled": {
+                    "type": "boolean"
+                },
+                "rinseLimit": {
+                    "type": "number"
+                },
+                "swabLimit": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "enabled"
+            ],
+            "title": "BacterialEquipment"
+        },
+        "CleaningAgentResidueVerification": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "direct": {
+                    "$ref": "#/definitions/CleaningAgentResidueVerificationDirect"
+                },
+                "indirect": {
+                    "$ref": "#/definitions/CleaningAgentResidueVerificationDirect"
+                }
+            },
+            "required": [
+                "direct",
+                "indirect"
+            ],
+            "title": "CleaningAgentResidueVerification"
+        },
+        "CleaningAgentResidueVerificationDirect": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "equipments": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/definitions/FluffyEquipment"
+                    }
+                }
+            },
+            "required": [
+                "equipments"
+            ],
+            "title": "CleaningAgentResidueVerificationDirect"
+        },
+        "FluffyEquipment": {
+            "type": "object",
+            "additionalProperties": false,
+            "patternProperties": {
+            "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$": {
+                    "$ref": "#/definitions/cleaningagenteq"
+                }
+            },
+            "title": "FluffyEquipment"
+        },
+        "cleaningagenteq": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "externalId": {
+                    "type": "string"
+                },
+                "cleaningAgents": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/definitions/eqactive"
+                    }
+                }
+            },
+            "required": [
+                "cleaningAgents",
+                "externalId"
+            ],
+            "title": "cleaningagenteq"
+        },
+        "eqactive": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "enabled": {
+                    "type": "boolean"
+                },
+                "locked": {
+                    "type": "boolean"
+                },
+                "additionalInfo": {
+                    "type": "string"
+                },
+                "amId": {
+                    "type": "string",
+                    "format": "uuid"
+                },
+                "alertLimitL3": {
+                    "type": "number"
+                },
+                "externalId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "additionalInfo",
+                "enabled",
+                "locked",
+                "name"
+            ],
+            "title": "eqactive"
+        },
+        "EndotoxinResidueVerification": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "direct": {
+                    "$ref": "#/definitions/EndotoxinClass"
+                },
+                "indirect": {
+                    "$ref": "#/definitions/EndotoxinClass"
+                }
+            },
+            "title": "EndotoxinResidueVerification"
+        },
+        "EndotoxinClass": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "equipments": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/definitions/EndotoxinEquipment"
+                    }
+                }
+            },
+            "required": [
+                "equipments"
+            ],
+            "title": "EndotoxinClass"
+        },
+        "EndotoxinEquipment": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "enabled": {
+                    "type": "boolean"
+                },
+                "additionalInfo": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "additionalInfo",
+                "enabled"
+            ],
+            "title": "EndotoxinEquipment"
+        },
+        "IntermediateResidueVerification": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "direct": {
+                    "$ref": "#/definitions/IntermediateResidueVerificationDirect"
+                }
+            },
+            "required": [
+                "direct"
+            ],
+            "title": "IntermediateResidueVerification"
+        },
+        "IntermediateResidueVerificationDirect": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "equipments": {
+                    "$ref": "#/definitions/Equipments"
+                }
+            },
+            "required": [
+                "equipments"
+            ],
+            "title": "IntermediateResidueVerificationDirect"
+        },
+        "Equipments": {
+            "type": "object",
+            "additionalProperties": false,
+            "title": "Equipments"
+        },
+        "MicrobialResidueVerification": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "direct": {
+                    "$ref": "#/definitions/MicrobialResidueVerificationDirect"
+                },
+                "indirect": {
+                    "$ref": "#/definitions/MicrobialResidueVerificationDirect"
+                }
+            },
+            "required": [
+                "direct",
+                "indirect"
+            ],
+            "title": "MicrobialResidueVerification"
+        },
+        "MicrobialResidueVerificationDirect": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "fungal": {
+                    "$ref": "#/definitions/Bacterial"
+                },
+                "bacterial": {
+                    "$ref": "#/definitions/Bacterial"
+                },
+                "bioburden": {
+                    "$ref": "#/definitions/Bacterial"
+                },
+                "endotoxin": {
+                    "$ref": "#/definitions/EndotoxinClass"
+                }
+            },
+            "title": "MicrobialResidueVerificationDirect"
+        },
+        "VerificationClass": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "policy": {
+                    "type": "string"
+                },
+                "swab": {
+                    "$ref": "#/definitions/VerificationRinse"
+                },
+                "rinse": {
+                    "$ref": "#/definitions/VerificationRinse"
+                }
+            },
+            "required": [
+                "rinse",
+                "swab"
+            ],
+            "title": "PhVerificationClass"
+        },
+        "Odour": {
+            "type": "object",
+            "additionalProperties": false,
+            "title": "Odour"
+        },
+        "VerificationRinse": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "rule": {
+                    "type": "string"
+                },
+                "enabled": {
+                    "type": "boolean"
+                },
+                "additionalInfo": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "number"
+                },
+                "maxValue": {
+                    "type": "number"
+                },
+                "minValue": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "additionalInfo",
+                "enabled"            ],
+            "title": "PhVerificationRinse"
+        }
+    }
+}

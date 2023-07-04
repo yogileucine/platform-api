@@ -1,0 +1,91 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/Welcome1",
+  "definitions": {
+    "Welcome1": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "result": {
+          "$ref": "#/definitions/Result"
+        }
+      },
+      "required": [
+        "result"
+      ],
+      "title": "Welcome1"
+    },
+    "Result": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "equipments": {
+          "type": "object",
+          "additionalProperties": {
+            "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$": {
+              "$ref": "#/definitions/eq"
+          }
+          }
+        }
+      },
+      "required": [
+        "equipments"
+      ],
+      "title": "Result"
+    },
+    "eq": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "externalId": {
+          "type": "string"
+        },
+        "cleaningAgents": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/CleaningAgent"
+          }
+        }
+      },
+      "required": [
+        "cleaningAgents",
+        "externalId"
+      ],
+      "title": "eq"
+    },
+    "CleaningAgent": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "externalId": {
+          "type": "string"
+        },
+        "amId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "locked": {
+          "type": "boolean"
+        },
+        "additionalInfo": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "additionalInfo",
+        "amId",
+        "enabled",
+        "externalId",
+        "locked",
+        "name"
+      ],
+      "title": "CleaningAgent"
+    }
+  }
+}
